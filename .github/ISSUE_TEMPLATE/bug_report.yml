@@ -1,0 +1,41 @@
+name: Bug report
+description: A feature didn't appear, broke, or gave a wrong result
+labels: [bug]
+body:
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Which feature?
+      options:
+        - Pano Date Resolver
+        - Saved Places Lasso
+        - Exports
+        - Options page
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead. Google Maps changes often — a screenshot of the area around the problem helps a lot.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Maps URL (optional)
+      description: Only if it's a public place you're happy to share. Please don't paste links to your private lists.
+  - type: input
+    id: versions
+    attributes:
+      label: Maps Plus version, browser, Maps language
+      placeholder: 'Maps Plus 0.1.0, Chrome 142, Maps in English'
+    validations:
+      required: true
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output (optional)
+      description: Turn on "Debug logging" in the Maps Plus options, reproduce, then copy lines starting with [maps-plus:…] from DevTools. Remove anything personal.
+      render: text
